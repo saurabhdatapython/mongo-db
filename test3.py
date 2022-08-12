@@ -65,13 +65,17 @@ client = pymongo.MongoClient("mongodb+srv://saurabhdata:Rajbhatta1!#$@saurabhdat
 db = client.test
 database = client["inventry"]
 collection = database["operations"]
-collection.insert_many(data)
+#collection.insert_many(data)
 #find_data = collection.find({"status": "A"})
 #find_data = collection.find({"status" :{"$in":[ "A" , "B"]}})
 #find_data = collection.find({"status":{"$gte": "P"}})
 #find_data = collection.find({'item': 'notebook','qty':{'$gte' :45}})
 #find_data = collection.find({'$or':[{ 'item': 'sketch pad '},{'qty' : {"$gte": 75}}]})
-find_data = collection.find({'$or':[{ 'item': 'sketch pad'},{'qty': {"$gte": 75}}]})
+#find_data = collection.find({'$or':[{ 'item': 'sketch pad'},{'qty': {"$gte": 75}}]})
+#collection.update_many({"item" : "notebook"} ,{"$set": {"item" : "saurabh"}})
+find_data =collection.find({'qty' : 50})
+#collection.delete_one({"item": "saurabh"})
+
 
 
 for i in find_data :
